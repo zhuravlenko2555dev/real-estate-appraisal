@@ -32,4 +32,18 @@ class RealEstate extends Model
         'appraised',
         'price_per_square_meter'
     ];
+
+    protected $casts = [
+        'appraised' => 'boolean',
+    ];
+
+    public function photos()
+    {
+        return $this->hasMany(Photo::class);
+    }
+
+    public function worker()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

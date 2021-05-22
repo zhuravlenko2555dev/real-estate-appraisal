@@ -19,7 +19,7 @@ class CreateRealEstatesTable extends Migration
             $table->unsignedTinyInteger('action_type');
             $table->unsignedTinyInteger('area_type');
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             $table->unsignedSmallInteger('area');
             $table->boolean('appraised')->default(false);
             $table->decimal('price_per_square_meter',9,3);
