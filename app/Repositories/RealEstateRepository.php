@@ -71,6 +71,12 @@ class RealEstateRepository extends BaseRepository
         return $this->response($realEstate, self::CREATED_STATUS_CODE);
     }
 
+    public function destroy(RealEstate $realEstate) {
+        $realEstate->delete();
+
+        return $this->response(['message' => 'Successfully deleted'], self::SUCCESS_STATUS_CODE);
+    }
+
     public function appraise(Request $request, RealEstate $realEstate) {
         $request->validate([
             'price_per_square_meter' => 'required|numeric',

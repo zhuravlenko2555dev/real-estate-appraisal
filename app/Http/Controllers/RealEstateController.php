@@ -92,8 +92,8 @@ class RealEstateController extends Controller
      */
     public function destroy(RealEstate $realEstate)
     {
-//        $response = $this->realEstateRepository->destroy($realEstate);
-//        return response()->json($response["data"], $response["statusCode"]);
+        $response = $this->realEstateRepository->destroy($realEstate);
+        return response()->json($response["data"], $response["statusCode"]);
     }
 
     /**
